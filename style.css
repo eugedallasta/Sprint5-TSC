@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat";
+  font-size: 10px;
+}
+body {
+  background-color: #112031;
+  color: white;
+  background-image:url("./images/blob-_2_.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y:center;
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  position: absolute;
+  top: 50px;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.container p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3rem;
+  text-align: justify;
+}
+button {
+  margin-top: 40px;
+  width: fit-content;
+  padding: 2rem;
+  font-size: 2rem;
+  background-color:#112031;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+#weather{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h3{
+  font-size: xx-large;
+}
+
+.valoration{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.rate{
+  margin-top: 3rem;
+  font-style:italic;
+}
