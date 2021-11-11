@@ -62,6 +62,12 @@ function getJoke() {
     });
 }
 getJoke();
+// async function getChuckJoke():Promise<void> {
+//     const response = await fetch(urlChuck, { headers: { 'Accept': 'application/json' } });
+//     const data = await response.json();
+//     streamJoke.innerHTML = data.joke;
+// }
+// getChuckJoke();
 //pinto la Api weather
 function getWeather() {
     return __awaiter(this, void 0, void 0, function () {
