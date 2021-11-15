@@ -1,14 +1,14 @@
 const url: string = "https://icanhazdadjoke.com/";
 const urlWeather: string = "https://api.openweathermap.org/data/2.5/weather?id=3128760&appid=754064b723e0d23f4d918d569e6227af&units=metric";
-const urlChuck: string = "https://api.chucknorris.io/jokes/random";
-const streamJoke: any = document.querySelector(".joke p");
-const button: any = document.getElementById("button");
-const weather: any = document.getElementById("weather");
-const icon: any = document.getElementById("icon");
-const button3: any = document.querySelector(".button3");
-const button2: any = document.querySelector(".button2");
-const button1: any = document.querySelector(".button1");
-let reportJokes: any[] = [];
+const urlChuck: string = "https://geek-jokes.sameerkumar.website/api?format=json";
+const streamJoke: HTMLElement = document.querySelector(".joke p") as HTMLElement;
+const button: HTMLButtonElement = document.getElementById("button") as HTMLButtonElement;
+const weather: HTMLElement = document.getElementById("weather") as HTMLElement;
+const icon: HTMLElement = document.getElementById("icon") as HTMLElement;
+const button3: HTMLButtonElement = document.querySelector(".button3") as HTMLButtonElement;
+const button2: HTMLButtonElement = document.querySelector(".button2") as HTMLButtonElement;
+const button1: HTMLButtonElement = document.querySelector(".button1") as HTMLButtonElement;
+let reportJokes: Jokes[] = [];
 
 
 //Llamamos a la Api
@@ -45,23 +45,39 @@ button.addEventListener("click", async () => {
         const data = await response.json();
    
         weather.innerHTML = `<img src=" http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="icon">`;
-        weather.innerHTML += `<h3><strong> | ${data.main.temp}  </strong></h3>`;
+        weather.innerHTML += `<h3><strong> | ${Math.round(data.main.temp)} Cº </strong></h3>`;
 
     }
-getWeather(urlWeather);
+getWeather(urlWeather)
 
 //Puntuación del chiste
 
-interface reportAcudits {
-     joke: string;
-     score: number;
-     date: Date;
+
+class Jokes{
+  joke: string;
+  score: number;
+  date:string;
+  constructor(joke: string, score: number, date:string){
+    this.joke = joke;
+    this.score = score;
+    this.date = date;
+  }
 }
- 
-const jokeScore = ()=>{}
+const d = new Date();
+let dateText = d.toISOString();
+
+button3.addEventListener('click', () => {
+  reportJokes.push(new Jokes(streamJoke.innerHTML, 3,dateText));
+  console.log(reportJokes);
+});
+button2.addEventListener('click', () => {
+  reportJokes.push(new Jokes(streamJoke.innerHTML, 2,dateText));
+  console.log(reportJokes);
+});
+button1.addEventListener('click', () => {
+  reportJokes.push(new Jokes(streamJoke.innerHTML, 1,dateText));
+  console.log(reportJokes);
+});
 
 
 
-button3.addEventListener("click",jokeScore());
-button2.addEventListener("click", jokeScore());
-button1.addEventListener("click", jokeScore());
