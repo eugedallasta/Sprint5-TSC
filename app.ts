@@ -75,7 +75,7 @@ button2.addEventListener('click', () => {
   console.log(reportJokes);
 });
 button1.addEventListener('click', () => {
-  reportJokes.push(new Jokes(streamJoke.innerHTML, 1,dateText));
+  reportJokes.push(new Jokes(streamJoke.innerHTML, 1, dateText));
   console.log(reportJokes);
 });
 
